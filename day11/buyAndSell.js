@@ -1,13 +1,13 @@
 // Buying and selling the stock 
 
 function buyAndSell(arr){
-    for(let i=0;i<arr.length-1;i++){
-        let profit = 0
-        for(let j=i+1;j<=i+1;j++){
-            profit = arr[j] - arr[i]
-        }
-        console.log(profit)
+    let profit = 0
+    let min = arr[0]
+    for(let i=0;i<arr.length;i++){
+        min = Math.min(min,arr[i])
+        profit = Math.max(profit,arr[i]-min)
     }
+    console.log(profit)
 }
-let arr = [2,5,7,1,9]
+let arr = [1,4,3,2,5]
 buyAndSell(arr)
